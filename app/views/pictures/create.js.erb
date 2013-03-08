@@ -1,0 +1,4 @@
+$('#pictures').prepend('<%= j(render('picture_partial', pic: @pic))  %>');
+$('#pic_<%= @pic.id %>').hide();
+$('#pic_<%= @pic.id %>').slideDown();
+

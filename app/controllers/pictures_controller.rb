@@ -12,7 +12,10 @@ class PicturesController < ApplicationController
   def create
     @pic = Picture.new(params[:picture])
     if @pic.save
-      redirect_to pictures_url, :notice => "Picture created successfully."
+      respond_to do |format|
+        format.html {redirect_to pictures_url, :notice => "Picture created successfully."}
+        format.js {render 'create'}
+      end
     else
       render 'new'
     end
