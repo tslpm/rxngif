@@ -1,6 +1,5 @@
-<nav>
-  <%= link_to "Add A New Picture", new_picture_url %>
-</nav>
+
+<%= render 'form' %>
 
 <ul id="pictures">
   <% @pictures.each do |pic| %>

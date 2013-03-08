@@ -23,7 +23,8 @@ class PicturesController < ApplicationController
   end
 
   def index
-    @pictures = Picture.all
+    @pictures = Picture.order('id desc').limit(200)
+    @pic = Picture.new
 
     respond_to do |format|
       format.html { render 'index' }
